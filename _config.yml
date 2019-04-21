@@ -5,15 +5,15 @@
 # Site
 title: 失落的旁观者
 subtitle:
-description:
-keywords:
+description: 
+keywords: Java，Spring，Kafka，Dubbo，Netty，互联网金融，第三方支付
 author: iblur
 language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://myblur.github.io
+url: https://iblur.me
 root: /
 permalink: :year/:month/:title/
 permalink_defaults:
@@ -82,47 +82,17 @@ deploy:
   repo: https://github.com/myblur/myblur.github.io.git
   branch: master
 
+# rss
+plugins: hexo-generate-feed
 
+# search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
-theme_config:
-  cache:
-    enable: true
-
-
-  menu:
-    home: / || home
-    about: /about/ || user
-    tags: /tags/ || tags
-    categories: /categories/ || th
-    archives: /archives/ || archive
-    #schedule: /schedule/ || calendar
-    #sitemap: /sitemap.xml || sitemap
-    #commonweal: /404/ || heartbeat
-  
-  social:
-    GitHub: https://github.com/myblur || github
-    E-Mail: mailto:xinchen9726@hotmail.com || envelope
-
-  social_icons:
-    enable: true
-    icons_only: true
-    transition: false
-
-  seo: true
-  index_with_subtitle: true
-  exturl: true
-
-  scheme: Pisces
-
-  footer:
-    since: 2019
-    icon:
-      name: heart
-      animated: true
-      color: "#808080"
-      copyright: "iblur"
-
-      powered:
-        enable: false
-      theme:
-        enable: false
+# symbols count time
+symbols_count_time:
+  symbols: true
+  time: true
