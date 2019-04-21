@@ -3,19 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 失落的旁观者
 subtitle:
 description:
 keywords:
 author: iblur
 language: zh-CN
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://myblur.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:title/
 permalink_defaults:
 
 # Directory
@@ -87,7 +87,27 @@ deploy:
 theme_config:
   cache:
     enable: true
+
+
+  menu:
+    home: / || home
+    about: /about/ || user
+    tags: /tags/ || tags
+    categories: /categories/ || th
+    archives: /archives/ || archive
+    #schedule: /schedule/ || calendar
+    #sitemap: /sitemap.xml || sitemap
+    #commonweal: /404/ || heartbeat
   
+  social:
+    GitHub: https://github.com/myblur || github
+    E-Mail: mailto:xinchen9726@hotmail.com || envelope
+
+  social_icons:
+    enable: true
+    icons_only: true
+    transition: false
+
   seo: true
   index_with_subtitle: true
   exturl: true
@@ -106,8 +126,3 @@ theme_config:
         enable: false
       theme:
         enable: false
-  creative_commons:
-    license: by-nc-sa
-    sidebar: true
-    post: false
-
