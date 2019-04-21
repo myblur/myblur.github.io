@@ -96,3 +96,9 @@ search:
 symbols_count_time:
   symbols: true
   time: true
+
+# sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
