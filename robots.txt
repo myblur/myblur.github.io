@@ -10,3 +10,7 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
+
+Sitemap: https://iblur.me/search.xml
+Sitemap: https://iblur.me/sitemap.xml
+Sitemap: https://iblur.me/baidusitemap.xml
