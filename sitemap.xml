@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iblur.me/about/index.html</loc>
+    
+    <lastmod>2019-04-24T14:08:02.959Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://iblur.me/2019/04/brand-new-start/</loc>
     
     <lastmod>2019-04-23T16:03:00.565Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://iblur.me/tags/index.html</loc>
     
     <lastmod>2019-04-21T14:03:15.030Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iblur.me/about/index.html</loc>
-    
-    <lastmod>2019-04-21T13:00:38.136Z</lastmod>
     
   </url>
   
