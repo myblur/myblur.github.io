@@ -9,8 +9,6 @@
         }
     });
 
-    
-
     function adjustNavbar() {
         const navbarWidth = $('.navbar-main .navbar-start').outerWidth() + $('.navbar-main .navbar-end').outerWidth();
         if ($(document).outerWidth() < navbarWidth) {

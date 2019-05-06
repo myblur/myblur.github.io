@@ -20,8 +20,16 @@ textarea {
     max-width: 960px;
     width: 960px;
   }
+  .is-3-column .container {
+    max-width: 1216px;
+    width: 1216px;
+  }
 }
 @media screen and (min-width: 1472px) {
+  .is-3-column .container {
+    max-width: 1344px;
+    width: 1344px;
+  }
   .is-2-column .container {
     max-width: 1152px;
     width: 1152px;
@@ -194,11 +202,28 @@ img.thumbnail {
 .timeline .media:first-child:last-child:after {
   top: calc(0.3rem + 9px);
 }
+.article {
+  padding: 1.5rem 1.8rem;
+}
 .article .article-meta {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+.article .article-meta >:first-child {
+  flex-wrap: wrap;
+  width: 100%;
+}
+.article .article-meta >:first-child >* {
+  flex-grow: 0 !important;
+}
+.article .title {
+  margin: 0 0 0.5rem -0.1rem;
+}
+.article .title .fas {
+  margin-right: 0.5rem;
 }
 .article .content {
   font-size: 1.1rem;
+  letter-spacing: 0.02rem;
 }
 .article .content blockquote.pullquote {
   float: right;
@@ -288,6 +313,9 @@ img.thumbnail {
 }
 .is-overflow-x-auto {
   overflow-x: auto !important;
+}
+.is-overflow-x-auto::-webkit-scrollbar {
+  width: 0 !important;
 }
 .is-flex-grow {
   flex-grow: 1 !important;
