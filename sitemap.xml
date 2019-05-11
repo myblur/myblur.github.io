@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iblur.me/articles/write-an-rpc-from-scratch-part-one.html</loc>
+    
+    <lastmod>2019-05-11T16:06:22.408Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://iblur.me/articles/kafka-interview-questions-and-answers-part-one.html</loc>
     
     <lastmod>2019-05-09T15:15:34.798Z</lastmod>

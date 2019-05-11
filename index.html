@@ -7,15 +7,18 @@
 
 
 
-    <meta name="keywords" content="Java，Spring，Kafka，Dubbo，Netty，NIO，高并发，互联网金融，第三方支付">
+    <meta name="description" content="一个渣渣Java程序员的兴趣小站，谢谢乱七八糟的东西，搞点心得感悟，学习一些新的知识，林林种种的记录下来。。。">
+<meta name="keywords" content="Java，Spring，Kafka，Dubbo，Netty，NIO，高并发，互联网金融，第三方支付">
 <meta property="og:type" content="website">
 <meta property="og:title" content="失落的旁观者">
 <meta property="og:url" content="https://iblur.me/index.html">
 <meta property="og:site_name" content="失落的旁观者">
+<meta property="og:description" content="一个渣渣Java程序员的兴趣小站，谢谢乱七八糟的东西，搞点心得感悟，学习一些新的知识，林林种种的记录下来。。。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://iblur.me/images/og_image.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="失落的旁观者">
+<meta name="twitter:description" content="一个渣渣Java程序员的兴趣小站，谢谢乱七八糟的东西，搞点心得感悟，学习一些新的知识，林林种种的记录下来。。。">
 <meta name="twitter:image" content="https://iblur.me/images/og_image.png">
 
 
@@ -143,6 +146,87 @@ var _hmt = _hmt || [];
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
+    <div class="card">
+    
+    <div class="card-content article ">
+
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/articles/write-an-rpc-from-scratch-part-one.html">从零开始写一个RPC框架——一切从这里开始</a>
+            
+        </h1>
+
+        
+        <div class="level article-meta is-size-7 is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-11T12:42:04.000Z"><i class="fa fa-calendar-alt">&nbsp;</i>2019-05-11</time>
+                
+                <div class="level-item">
+                    <i class="far fa-folder-open">&nbsp;</i>
+                    <a class="has-link-grey -link" href="/categories/distributed-foundation/">分布式基础</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/distributed-foundation/RPC/">RPC</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock">&nbsp;</i>
+                    
+                    
+                    21 分钟 读完 (大约 3160 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>RPC，这个名词在我上学及找工作的的几年前是比较少能谈及到的，我也是工作之后才第一次接触到RPC框架Dubbo（其实也不能这么说，Http也可以算作RPC）。</p>
+<p>匆匆几年，不知什么时候RPC这个名词已经是招聘JD里面的常客了？</p>
+<h2 id="RPC是什么？"><a href="#RPC是什么？" class="headerlink" title="RPC是什么？"></a>RPC是什么？</h2><p>RPC是什么，第一次用Dubbo的时候我也是很懵逼的。</p>
+<p>受当时的知识面所局限，我在最开始的接触的Dubbo时一直很不理解为什么我只是用定义的接口调用了一个方法，远端的服务就能接收到我的请求并处理然后响应结果。</p>
+<p>后来使用了Debug大法才恍然大悟，原来还能这么玩。</p>
+<p>下面引用一段网上经典的描述及图片来对RPC做一个简单的理解。</p>
+<p>RPC（Remote Procedure Call Protocol）——<strong>远程过程调用协议</strong>，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了<strong>传输层</strong>和<strong>应用层</strong>。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</p>
+<p><img src="../images/assets/5611237-1ec7ccafab1228d2.png" alt="RPC调用过程/侵删"></p>
+<p><a href="https://en.wikipedia.org/wiki/Remote_procedure_call#Sequence_of_events" rel="external nofollow noopener noreferrer" target="_blank">RPC事件顺序</a></p>
+<ol>
+<li>客户端（client function）调用客户端存根（client stub，可以理解为一个代理）。该调用是本地过程调用。</li>
+<li>客户端存根（client stub）将参数打包到消息中，并进行系统调用以发送消息。</li>
+<li>客户端的操作系统将消息从客户端计算机发送到服务器计算机。</li>
+<li>服务器的操作系统将传入的数据包传递到服务器存根（server stub，可以理解为一个代理）。</li>
+<li>服务器存根（server stub）解包消息得到调用参数。</li>
+<li>服务器存根（server stub）调用真实的服务（server function）获得结果并以相同的方式反向返回结果。</li>
+</ol>
+        </div>
+        
+        
+        <hr style="height:1px;margin:1rem 0">
+        <div class="level is-mobile is-flex">
+            <div class="level-start">
+                
+                <div class="level-item is-size-7">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/RPC/">RPC</a>
+                </div>
+                
+            </div>
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/articles/write-an-rpc-from-scratch-part-one.html">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
     <div class="card">
     
     <div class="card-content article ">
@@ -326,7 +410,7 @@ var _hmt = _hmt || [];
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        3
                     </p>
                 </div>
             </div>
@@ -336,7 +420,7 @@ var _hmt = _hmt || [];
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        4
                     </p>
                 </div>
             </div>
@@ -346,7 +430,7 @@ var _hmt = _hmt || [];
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -397,6 +481,22 @@ var _hmt = _hmt || [];
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/distributed-foundation/">
+            <span class="level-start">
+                <span class="level-item">分布式基础</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/distributed-foundation/RPC/">
+            <span class="level-start">
+                <span class="level-item">RPC</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/thoughts/">
             <span class="level-start">
                 <span class="level-item">想法</span>
@@ -424,7 +524,7 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/trivial/" style="font-size: 10px;">琐碎</a> <a href="/tags/interview/" style="font-size: 10px;">面试</a>
+        <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/trivial/" style="font-size: 10px;">琐碎</a> <a href="/tags/interview/" style="font-size: 10px;">面试</a>
     </div>
 </div>
 
